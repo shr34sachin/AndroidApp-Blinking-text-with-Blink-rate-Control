@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Animation animationTextBlink;
     Boolean blinkFLAG;
     FloatingActionButton fabPlus, fabMinus;
-    int speedBlink = 500;
+    private int speedBlink = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void animationSetup(){
+    private void animationSetup(){
         animationTextBlink = new AlphaAnimation(0.0f, 1.0f);        //
         animationTextBlink.setDuration(speedBlink);                        // Manage the time of the blink
         animationTextBlink.setStartOffset(20);
@@ -102,11 +102,11 @@ public class MainActivity extends AppCompatActivity {
         animationTextBlink.setRepeatCount(Animation.INFINITE);
     }
 
-    public void startBlinking(View tv){
+    private void startBlinking(View tv){
         tv.setAnimation(animationTextBlink);
     }
 
-    public void stopBlinking(View tv){
+    private void stopBlinking(View tv){
         tv.clearAnimation();
     }
 }
